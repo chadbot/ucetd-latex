@@ -157,9 +157,9 @@
 
 % Ported from old file, sets up spacing between footnotes
 \RequirePackage[splitrule]{footmisc}
-\setlength{\footnotesep}{\baselineskip}
+\setlength{\footnotesep}{.5\baselineskip}
 \let\oldfootnoterule = \footnoterule
-\renewcommand{\footnoterule}{\kern 0.4\footnotesep\oldfootnoterule\kern-0.4\footnotesep}
+\renewcommand{\footnoterule}{\kern 0.4\footnotesep\oldfootnoterule\kern\footnotesep}
 \renewcommand{\@makefntext}[1]{\noindent\makebox[2.5em][r]{\@thefnmark.\ }#1}
 
 % Setup default size of math text
