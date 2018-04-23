@@ -318,6 +318,13 @@
     \endgroup
   \fi}
 
+%% Set block quotes to single-spaced.
+\let\oldquote=\quote
+\renewcommand{\quote}{\oldquote \singlespacing}
+
+\let\oldquotation=\quotation
+\renewcommand{\quotation}{\oldquotation \singlespacing}
+
 % Add "CHAPTER"/"APPENDIX" headings to TOC before first of each.
 % If you want these words to be a bit bigger, remove "\normalsize"
 % from the definition below.  If you want the words to be bold,
