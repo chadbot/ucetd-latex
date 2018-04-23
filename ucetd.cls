@@ -13,72 +13,72 @@
 
 % Declare a super class and pass it remaining unprocessed arguments
 \newcommand{\etdSuperClass}[2]{
-	\DeclareOption*{\PassOptionsToClass{\CurrentOption}{#1}}
-	\ProcessOptions\relax
-	\LoadClass[#2]{#1}
+  \DeclareOption*{\PassOptionsToClass{\CurrentOption}{#1}}
+  \ProcessOptions\relax
+  \LoadClass[#2]{#1}
 }
 
 % Default copyright text
 \newcommand{\etdCopyrightText}{
-	\null\vfill
-	\centerline{Copyright \copyright\ \number\year\ by \@author}
-	\centerline{All Rights Reserved}
-	\vskip 15pt\relax
+  \null\vfill
+  \centerline{Copyright \copyright\ \number\year\ by \@author}
+  \centerline{All Rights Reserved}
+  \vskip 15pt\relax
 }
 
 % Preliminary sections following the table of contents and preceding the body are front matter
 \newcommand{\etdFrontMatter}[1]{
-	\chapter*{#1}
-	\addcontentsline{toc}{chapter}{#1}
+  \chapter*{#1}
+  \addcontentsline{toc}{chapter}{#1}
 }
 
 % Special front matter that appears before the table of contents
 \newcommand{\etdPreTOCMatter}[1]{
-	\chapter*{}
-	\thispagestyle{empty}
-	\begin{center}
-		#1
-	\end{center}
+  \chapter*{}
+  \thispagestyle{empty}
+  \begin{center}
+    #1
+  \end{center}
 }
 
 % Starts the main matter of the document
 \newcommand{\etdMainMatter}{
-	\clearpage
-	% Switch to arabic numbers on pages
-	\pagenumbering{arabic}
+  \clearpage
+  % Switch to arabic numbers on pages
+  \pagenumbering{arabic}
 }
 
 % Commands to follow the title page
 \newcommand{\etdPostTitle}{
-	% Setup page numbering
-	\pagenumbering{roman}
-	\addtocounter{page}{1}
+  % Setup page numbering
+  \pagenumbering{roman}
+  \addtocounter{page}{1}
 }
 
 % UC ETD title page format
 \newcommand{\etdTitlePage} {
-	\begin{titlepage}
-		\begin{center}
-			\rule{0in}{0.55in} % Artificial extra [old=0.95in] margin. Why not vspace?
-			THE UNIVERSITY OF CHICAGO\\
-			\vspace{0.8in}
-			\MakeUppercase{\@title}\\
-			\vspace{0.8in}
-			A DISSERTATION SUBMITTED TO\\
-			THE FACULTY OF THE DIVISION OF THE \MakeUppercase{\@division}\\
-			IN CANDIDACY FOR THE DEGREE OF\\
-			\MakeUppercase{\@degree}\\
-			\ \\
-			DEPARTMENT OF \MakeUppercase{\@department}\\
-			\vspace{0.8in}
-			BY\\
-			\MakeUppercase{\@author}\\
-			\vspace{0.8in}
-			CHICAGO, ILLINOIS\\
-			\MakeUppercase{\@date}
-			\vspace*{0.45in}
-		\end{center}
-	\end{titlepage}
+  \begin{titlepage}
+    \begin{center}
+      \rule{0in}{0.55in} % Artificial extra [old=0.95in] margin. Why not vspace?
+      THE UNIVERSITY OF CHICAGO\\
+      \vspace{0.8in}
+      \MakeUppercase{\@title}\\
+      \vspace{0.8in}
+      A DISSERTATION SUBMITTED TO\\
+      THE FACULTY OF THE DIVISION OF THE \MakeUppercase{\@division}\\
+      IN CANDIDACY FOR THE DEGREE OF\\
+      \MakeUppercase{\@degree}\\
+      \ \\
+      DEPARTMENT OF \MakeUppercase{\@department}\\
+      \vspace{0.8in}
+      BY\\
+      \MakeUppercase{\@author}\\
+      \vspace{0.8in}
+      CHICAGO, ILLINOIS\\
+      \MakeUppercase{\@date}
+      \vspace*{0.45in}
+    \end{center}
+  \end{titlepage}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -173,10 +173,10 @@
 % Define text to go on the dedication/copyright/epigraph page
 
 % Usage:
-%	\dedication{dedication text}
+% \dedication{dedication text}
 \newcommand{\dedication}[1]{\newcommand{\etdDedicationText}{#1}}
 % Usage:
-%	\epigraph{epigraph text}
+% \epigraph{epigraph text}
 \newcommand{\epigraph}[1]{\newcommand{\etdEpigraphText}{#1}}
 
 % Output a dedication/copyright/epigraph page
@@ -194,12 +194,12 @@
 % Bibliography
 % Change ft2,master,refs below to point to your library.bib files
 \newcommand{\makebibliography}{
-	\newpage
-	\addcontentsline{toc}{chapter}{References}
-	\begin{singlespace}
-		\bibliography{ft2,master,refs}
-		\bibliographystyle{plain}
-	\end{singlespace}
+  \newpage
+  \addcontentsline{toc}{chapter}{References}
+  \begin{singlespace}
+    \bibliography{ft2,master,refs}
+    \bibliographystyle{plain}
+  \end{singlespace}
 }
 
 %
@@ -216,8 +216,8 @@
 
 % Output title page
 \renewcommand{\maketitle}{
-	\etdTitlePage
-	\etdPostTitle
+  \etdTitlePage
+  \etdPostTitle
 }
 
 % You MUST call this command where the title would normally be emitted if you omit the title page
@@ -237,19 +237,19 @@
 % Chapter/Section formatting
 \renewcommand{\@makechapterhead}[1]{{
 
-        \setlength{\topmargin}{0.5in}  	% really 1.5in, added by bph
-                                      			% to meet OAP standards
+        \setlength{\topmargin}{0.5in}   % really 1.5in, added by bph
+                                            % to meet OAP standards
         \normalfont\large\bfseries
         \begin{center}
         \etdChapterStyle{\@chapapp{ \thechapter}}  %  CHAPTER # or APPENDIX
-        
-        
+
+
         \etdChapterStyle{#1}                       %     TITLE OF CHAPTER
         \end{center}
         \setlength{\topmargin}{0in}   % back to 1in
 
 }}
-\renewcommand{\@makeschapterhead}[1]{{  
+\renewcommand{\@makeschapterhead}[1]{{
         \setlength{\topmargin}{0.5in}   % really 1.5in, added by bph
                                         % to meet OAP standards
         \normalfont\large\bfseries
@@ -319,8 +319,8 @@
   \fi}
 
 % Add "CHAPTER"/"APPENDIX" headings to TOC before first of each.
-% If you want these words to be a bit bigger, remove "\normalsize" 
-% from the definition below.  If you want the words to be bold, 
+% If you want these words to be a bit bigger, remove "\normalsize"
+% from the definition below.  If you want the words to be bold,
 % remove "\mdseries". (CCW)
 
 \iftocflag
@@ -331,7 +331,7 @@
   \fi%
   \old@chapter[{#1}]{#2}}
 \fi
- 
+
 % Change names of table of contents and bibliography
 
 \renewcommand{\contentsname}{Table of Contents}
@@ -411,7 +411,7 @@
     % This works b/c multiple \newpage's are treated as one
     \newpage
     \addcontentsline{toc}{chapter}{List of Tables}
-    \oldlistoftables 
+    \oldlistoftables
   \end{singlespace}
 }
 
@@ -422,6 +422,6 @@
     % This works b/c multiple \newpage's are treated as one
     \newpage
     \addcontentsline{toc}{chapter}{List of Figures}
-    \oldlistoffigures 
+    \oldlistoffigures
   \end{singlespace}
 }
