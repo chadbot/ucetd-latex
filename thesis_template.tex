@@ -1,5 +1,6 @@
 % ---- ETD Document Class and Useful Packages ---- %
 \documentclass{ucetd}
+\usepackage[utf8]{inputenc}
 \usepackage{subfigure,epsfig,amsfonts}
 \usepackage{natbib}
 \usepackage{amsmath}
@@ -53,7 +54,9 @@
 % Intro to chapter one
 
 % Format a LaTeX bibliography
-\makebibliography
+% Change 'apa' and 'master' to preferred style and bibtex file.
+\bibliographystyle{apa}
+\bibliography{master}
 
 % Figures and tables, if you decide to leave them to the end
 %\input{figure}

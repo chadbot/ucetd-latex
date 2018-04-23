@@ -192,13 +192,12 @@
 \newcommand{\mainmatter}{\etdMainMatter}
 
 % Bibliography
-% Change ft2,master,refs below to point to your library.bib files
-\newcommand{\makebibliography}{
+\let\oldbib=\bibliography
+\renewcommand{\bibliography}[1]{
   \newpage
   \addcontentsline{toc}{chapter}{References}
   \begin{singlespace}
-    \bibliography{ft2,master,refs}
-    \bibliographystyle{plain}
+    \oldbib{#1}
   \end{singlespace}
 }
 
