@@ -85,12 +85,9 @@
 \newcommand{\chapterDraftTitle}[1]{
     \begin{center}
       \rule{0in}{0.25in} % Artificial extra [old=0.95in] margin. Why not vspace?
-      \MakeUppercase{\@authorshort}\\
-      \vspace{0.15in}
-      \MakeUppercase{Dissertation Chapter Draft}\\
-      \vspace{0.15in}
+      \normalfont\bfseries{\@authorshort{ - Dissertation Draft}}\\
       \MakeUppercase{#1}
-      \vspace*{0.25in}
+      % \vspace*{0.15in}
     \end{center}
 }
 
