@@ -81,6 +81,20 @@
   \end{titlepage}
 }
 
+% Short title for chapter drafts.
+\newcommand{\chapterDraftTitle}[1]{
+    \begin{center}
+      \rule{0in}{0.25in} % Artificial extra [old=0.95in] margin. Why not vspace?
+      \MakeUppercase{\@authorshort}\\
+      \vspace{0.15in}
+      \MakeUppercase{Dissertation Chapter Draft}\\
+      \vspace{0.15in}
+      \MakeUppercase{#1}
+      \vspace*{0.25in}
+    \end{center}
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -208,6 +222,7 @@
 % Basic information
 \renewcommand{\title}[1]{\gdef\@title{#1}}
 \renewcommand{\author}[1]{\gdef\@author{#1}}
+\newcommand{\authorshort}[1]{\gdef\@authorshort{#1}}
 \newcommand{\department}[1]{\gdef\@department{#1}}
 \newcommand{\division}[1]{\gdef\@division{#1}}
 \newcommand{\degree}[1]{\gdef\@degree{#1}}
@@ -260,11 +275,11 @@
 \renewcommand\section{\@startsection {section}{1}{\z@}%
                                 {-3.5ex \@plus -1ex \@minus -.2ex}%
                                 {2.3ex \@plus.2ex}%
-                                {\normalfont\large\bfseries\centering}}
+                                {\normalfont\large\bfseries}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
                                 {-3.25ex\@plus -1ex \@minus -.2ex}%
                                 {1.5ex \@plus .2ex}%
-                                {\normalfont\large\itshape\centering}}
+                                {\normalfont\large\itshape}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
                                 {-3.25ex\@plus -1ex \@minus -.2ex}%
                                 {1.5ex \@plus .2ex}%
