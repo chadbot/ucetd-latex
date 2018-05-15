@@ -203,12 +203,21 @@
 \newcommand{\mainmatter}{\etdMainMatter}
 
 % Bibliography
+% BibTeX
 \let\oldbib=\bibliography
 \renewcommand{\bibliography}[1]{
   \newpage
   \addcontentsline{toc}{chapter}{References}
   \begin{singlespace}
     \oldbib{#1}
+  \end{singlespace}
+}
+
+% BibLaTeX
+\newcommand{\printreferences}[1]{
+  \begin{singlespace}
+    \setlength\bibitemsep{12pt}   % length between two different entries
+    \printbibliography[heading=bibintoc, title={References}]{#1}
   \end{singlespace}
 }
 
